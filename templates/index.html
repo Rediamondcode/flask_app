@@ -1,21 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Python Demo App</title>
-    <style>
-        body { font-family: Arial, sans-serif; padding: 30px; }
-        input, button { padding: 10px; margin-top: 10px; width: 300px; }
-        button { background: #4CAF50; color: white; border: none; }
-    </style>
-</head>
-<body>
-    <h2>Welcome to the Python Demo App</h2>
-    <p>Enter your name below:</p>
-
-    <form action="/submit" method="POST">
-        <input type="text" name="name" placeholder="Enter your name" required>
-        <br>
-        <button type="submit">Submit</button>
-    </form>
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <h2>Welcome to the Advanced Demo App</h2>
+    <p>This is a more advanced Python Flask frontend application without a database.</p>
+</div>
+{% endblock %}
