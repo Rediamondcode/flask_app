@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Advanced Demo App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <a href="/" style="color:white; margin-right:20px;">Home</a>
+    <a href="/contact" style="color:white; margin-right:20px;">Contact</a>
+    {% if session.get("user") %}
+        <a href="/dashboard" style="color:white; margin-right:20px;">Dashboard</a>
+        <a href="/logout" style="color:white;">Logout</a>
+    {% else %}
+        <a href="/login" style="color:white;">Login</a>
+    {% endif %}
+</div>
+
+<div class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, msg in messages %}
+                <p style="color: green;">{{ msg }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>
